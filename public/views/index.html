@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Passport Lecture</title>
+    <script src="./vendors/angular.min.js" charset="utf-8"></script>
+    <script src="./scripts/client.js" charset="utf-8"></script>
+    <style media="screen">
+     html {margin: 0 auto; text-align: center;}
+     ul {background-color: lightgreen; border-radius: 10px; margin: 10px; list-style-type: none; padding: 10px;}
+     img {height: 100px; width: 100px; object-fit: cover;}
+   </style>
+  </head>
+    <body ng-app="myApp">
+      <h1>Passport Login</h1>
+      <form ng-controller="mainController">
+        <div>
+          <label for="username">Username:</label>
+          <input ng-model="username" type="text" name="username" id="username"/>
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input ng-model="password" type="password" name="password" id="password"/>
+        </div>
+        <div>
+          <input ng-click="login()" type="submit" value="Log In"/>
+          <a href="/register">Register</a>
+        </div>
+
+      </form>
+  </body>
+</html>

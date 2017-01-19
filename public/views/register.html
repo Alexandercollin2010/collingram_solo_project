@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Passport Lecture</title>
+    <script src="./vendors/angular.min.js" charset="utf-8"></script>
+    <script src="./scripts/client.js" charset="utf-8"></script>
+  </head>
+    <body ng-app="myApp">
+      <h1>Passport Register</h1>
+      <form ng-controller="registerController">
+        <div>
+          <label for="username">Username:</label>
+          <input ng-model="username" type="text" name="username" id="username"/>
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input ng-model="password" type="password" name="password" id="password"/>
+        </div>
+        <div>
+          <input ng-click="register()" type="submit" value="Register"/>
+        </div>
+      </form>
+  </body>
+</html>
