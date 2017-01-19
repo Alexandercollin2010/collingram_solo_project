@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngFileUpload']);
+var myApp = angular.module('myApp', ['ngFileUpload', 'ngRoute']);
 
 myApp.controller('mainController',['$scope', '$http', '$window',
   function($scope, $http, $window) {
@@ -17,7 +17,7 @@ myApp.controller('mainController',['$scope', '$http', '$window',
       data: userInfo
     }).then(function successCallback(response) {
       console.log(response);
-      $window.location.href = '/home';
+      $window.location.href = '/uploads';
     }, function errorCallback(error) {
       console.log('error', error);
       $window.location.href = '/';
@@ -32,7 +32,12 @@ myApp.controller('registerController',['$scope', '$http', '$window',
   $scope.register = function() {
     var userInfo = {
       username: $scope.username,
-      password: $scope.password
+      password: $scope.password,
+      email: $scope.email,
+      streetAdress: $scope.adress,
+      city: $scope.city,
+      state: $scope.state
+
     };
 
     $http({
@@ -48,8 +53,8 @@ myApp.controller('registerController',['$scope', '$http', '$window',
   };
 }]);
 
-myApp.controller('inputController', ['$scope', '$http', 'Upload',
-  function($scope, $http, Upload) {
+myApp.controller('inputController', ['$scope', '$http', 'Upload','$window',
+  function($scope, $http, Upload, $window) {
     console.log('Inside the inputController');
 
 
@@ -69,58 +74,11 @@ myApp.controller('inputController', ['$scope', '$http', 'Upload',
       console.log('submit', response.data);
       $scope.uploads.push(response.data);
       $scope.upload = {};
+      $window.location.href = '/allImages';
     });
   };
 
 
-    $scope.enterItem = function() {
-      var itemInfo = {
-        description: $scope.description,
-        picUrl: $scope.imgUrl
-      };// end itemInfo
-
-      $http({
-        method: 'POST',
-        url: '/home',
-        data: itemInfo
-      }).then(function successCallback(response) {
-        console.log('success', response);
-       $scope.getItem();
-      }, function errorCallback(error) {
-        console.log('error occurred!');
-      }); // end errorCallback
-
-      $scope.description = '';
-      $scope.imgUrl = '';
-    };// end enterItem
 
 
-    $scope.getItem = function(){
-      $http({
-        method: 'GET',
-        url: '/home/whateverYouWant'
-      }).then(function successCallback(response) {
-        console.log('success', response);
-        $scope.allTheItems = response.data ;
-      }, function errorCallback(error) {
-        console.log('error get occurred!');
-      }); // end errorCallback
-    };// end getItem
-
-
-
-    $scope.removeItem = function( indexIn ){
-        //console.log( 'confirming removal of:', $scope.allTheHeros[ indexIn ] );
-        var recordToDelete = $scope.allTheItems[ indexIn ]._id;
-        if( confirm( 'Remove ' + $scope.allTheItems[ indexIn ].description + '?' ) ){
-          //console.log( 'removing:', $scope.allTheHeros[ indexIn ] );
-          $http({
-            method: 'DELETE',
-            url: '/home/' + $scope.allTheItems[ indexIn ]._id
-          }).then(function(response){
-            console.log(response);
-            $scope.getItem();
-          });
-        }
-      };
 }]); // end inputController

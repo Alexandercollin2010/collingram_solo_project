@@ -6,7 +6,11 @@ var SALT_WORK_FACTOR = 10;
 
 var UserSchema = new Schema({
   username: {type: String, required: true, unique: true},
-  password: {type: String, required: true}
+  password: {type: String, required: true},
+  email: String,
+  streetAdress: String,
+  city: String,
+  state: String
 });
 
 // Must encrypt, salt and hash the password

@@ -9,6 +9,7 @@ var passport = require('./strategies/userStrategy');
 var indexRouter = require('./routes/index');
 var registerRouter = require('./routes/register');
 var homeRouter = require('./routes/imageAdd');
+var allImages = require('./routes/imageAdd');
 
 var app = express();
 
@@ -33,6 +34,7 @@ app.use(logger('dev'));
 app.use('/', indexRouter);
 app.use('/register', registerRouter);
 app.use('/uploads', homeRouter);
+app.use('/allImages', allImages);
 
 // server port set and listen
 var serverPort = process.env.port || 3003;

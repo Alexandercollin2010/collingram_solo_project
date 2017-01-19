@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Passport Lecture</title>
+    <title>CollinGram</title>
     <script src="./vendors/angular.min.js" charset="utf-8"></script>
+    <script src="./vendors/angular-route.min.js" charset="utf-8"></script>
+    <script src="/vendors/ng-file-upload-all.min.js"></script>
     <script src="./scripts/client.js" charset="utf-8"></script>
   </head>
     <body ng-app="myApp">
-      <h1>Passport Register</h1>
+      <h1>CollinGram Register</h1>
       <form ng-controller="registerController">
         <div>
           <label for="username">Username:</label>
@@ -15,6 +17,22 @@
         <div>
           <label for="password">Password:</label>
           <input ng-model="password" type="password" name="password" id="password"/>
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input ng-model="email" />
+        </div>
+        <div>
+          <label for="adress">Street Adress:</label>
+          <input ng-model="adress" />
+        </div>
+        <div>
+          <label for="city">City:</label>
+          <input ng-model="city" />
+        </div>
+        <div>
+          <label for="state">State:</label>
+          <input ng-model="state" />
         </div>
         <div>
           <input ng-click="register()" type="submit" value="Register"/>
