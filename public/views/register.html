@@ -9,33 +9,33 @@
   </head>
     <body ng-app="myApp">
       <h1>CollinGram Register</h1>
-      <form ng-controller="registerController">
+      <form ng-controller="registerController" ng-submit="register()">
         <div>
           <label for="username">Username:</label>
-          <input ng-model="username" type="text" name="username" id="username"/>
+          <input ng-model="username" type="text" name="username" id="username" required/>
         </div>
         <div>
           <label for="password">Password:</label>
-          <input ng-model="password" type="password" name="password" id="password"/>
+          <input ng-model="password" type="password" name="password" id="password" required/>
         </div>
         <div>
           <label for="email">Email:</label>
-          <input ng-model="email" />
+          <input ng-model="email" required/>
         </div>
         <div>
           <label for="adress">Street Adress:</label>
-          <input ng-model="adress" />
+          <input ng-model="adress" required/>
         </div>
         <div>
           <label for="city">City:</label>
-          <input ng-model="city" />
+          <input ng-model="city" required/>
         </div>
         <div>
           <label for="state">State:</label>
-          <input ng-model="state" />
+          <input ng-model="state" required/>
         </div>
         <div>
-          <input ng-click="register()" type="submit" value="Register"/>
+          <input type="submit" value="Register"/>
         </div>
       </form>
   </body>

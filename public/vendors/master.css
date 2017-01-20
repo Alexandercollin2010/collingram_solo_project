@@ -1,0 +1,21 @@
+.images {
+  display:inline-block;
+  margin-left: 15px;
+  text-align: center;
+}
+
+body {
+  background-image: url(https://zellox.com/wp-content/uploads/2016/05/fishing-backgrounds-%E2%80%AB%E2%80%AC-1440x900.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.imageAdd {
+  background-image: url(http://wallpapercave.com/wp/Z3OzpBe.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+a {
+  margin-left: 20px;
+}

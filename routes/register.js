@@ -5,6 +5,7 @@ var path = require('path');
 var UserSchema = require('../models/user');
 
 router.get('/', function(req, res) {
+
   var regPath = path.join(__dirname, '../public/views/register.html');
   res.sendFile(regPath);
 });
@@ -12,7 +13,7 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
   var sentUser = req.body;
 
-  UserSchema.create(sentUser, function(err, response) {
+  UserSchema.create(sentUser, function(err, response, next) {
     if(err){
       next(err);
     }else{

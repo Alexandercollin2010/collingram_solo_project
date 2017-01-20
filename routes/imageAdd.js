@@ -4,11 +4,15 @@ var fs = require('fs');
 var path = require('path');
 var Upload = require('../models/photos');
 var multer = require('multer');
+var user = require('../utilities/auth');
+
 var upload = multer({dest: 'uploads/'});
 
-router.get('/', function(req, res) {
+
+router.get('/', user, function(req, res) {
   var homePath = path.join(__dirname, '../public/views/imageAdd.html');
   res.sendFile(homePath);
+
 });
 
 /**

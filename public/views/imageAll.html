@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <script src="/vendors/angular.min.js"></script>
-    <script src="./vendors/angular-route.min.js" charset="utf-8"></script>
-    <script src="/vendors/ng-file-upload-all.min.js"></script>
-    <script src="/scripts/client.js"></script>
-  </head>
-  <body>
-    <h1>All Images</h1>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="/vendors/angular.min.js"></script>
+  <script src="./vendors/angular-route.min.js" charset="utf-8"></script>
+  <script src="/vendors/ng-file-upload-all.min.js"></script>
+  <script src="/scripts/client.js"></script>
+  <link rel="stylesheet" href="/vendors/bootstrap.min.css">
+  <link rel="stylesheet" href="/vendors/master.css">
+</head>
+<body ng-app='myApp'>
+
+  <a href="/uploads">Add Photo</a>
+  <a href="/allImages">All Photos</a>
+  <a href="/userImages">My Images</a>
+  <a href="/users">User Info</a>
+  <h1>All Images</h1>
+  <div ng-controller='inputController'  >
+        <div ng-repeat="upload in uploads" class='images'>
+          <div class="caption">
+            <p>{{upload.name}}</p>
+          </div>
+          <img ng-src='{{upload.file.path + "/" + upload.file.originalname}}'class="img-circle" class="img-responsive" height= 100px width= 100px  >
+        </div>
+
+
+  </div>
+</body>
 </html>

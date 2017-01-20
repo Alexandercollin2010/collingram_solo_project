@@ -74,7 +74,7 @@ myApp.controller('inputController', ['$scope', '$http', 'Upload','$window',
       console.log('submit', response.data);
       $scope.uploads.push(response.data);
       $scope.upload = {};
-      $window.location.href = '/allImages';
+      
     });
   };
 

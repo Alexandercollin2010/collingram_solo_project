@@ -9,7 +9,7 @@ var passport = require('./strategies/userStrategy');
 var indexRouter = require('./routes/index');
 var registerRouter = require('./routes/register');
 var homeRouter = require('./routes/imageAdd');
-var allImages = require('./routes/imageAdd');
+var allImages = require('./routes/imageAll');
 
 var app = express();
 

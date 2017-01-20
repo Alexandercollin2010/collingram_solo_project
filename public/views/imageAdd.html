@@ -8,8 +8,13 @@
   <script src="/vendors/ng-file-upload-all.min.js"></script>
   <script src="/scripts/client.js"></script>
   <link rel="stylesheet" href="/vendors/bootstrap.min.css">
+  <link rel="stylesheet" href="/vendors/master.css">
 </head>
-<body ng-app="myApp">
+<body ng-app="myApp" class='imageAdd'>
+  <a href="/uploads">Add Photo</a>
+  <a href="/allImages">All Photos</a>
+  <a href="/userImages">My Images</a>
+  <a href="/users">User Info</a>
 <div ng-controller="inputController">
   <h1>Upload Your Image!!</h1>
 
@@ -24,13 +29,7 @@
     <input type="submit" value="Submit"/>
   </form>
 
-  <h2>All uploads are here:</h2>
-  <ul>
-    <li ng-repeat="upload in uploads">
-      <p>{{upload.name}}</p>
-      <img ng-src='{{upload.file.path + "/" + upload.file.originalname}}' class="img-responsive">
-    </li>
-  </ul>
+
 </div>
 
 </body>
