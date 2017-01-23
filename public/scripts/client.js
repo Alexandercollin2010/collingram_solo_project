@@ -102,6 +102,21 @@ myApp.controller('inputController', ['$scope', '$http', 'Upload','$window',
     });
   };// end userImages
 
+  $scope.deleteImage = function( indexIn ){
+    //console.log( 'confirming removal of:', $scope.allTheHeros[ indexIn ] );
+    var imageToDelete = $scope.images[ indexIn ]._id;
+    if( confirm( 'Remove ' + $scope.images[ indexIn ].name + '?' ) ){
+      //console.log( 'removing:', $scope.allTheHeros[ indexIn ] );
+      $http({
+        method: 'DELETE',
+        url: '/userImages/' + $scope.images[ indexIn ]._id
+      }).then(function(response){
+        console.log(response);
+        $scope.userImages();
+      });
+    }
+  };
+
 
 
 

@@ -10,18 +10,20 @@
     <link rel="stylesheet" href="/vendors/master.css">
   </head>
   <body ng-app='myApp'>
+    <h1>CollinGram</h1>
     <a href="/uploads">Add Photo</a>
     <a href="/allImages">All Photos</a>
     <a href="/userImages">My Images</a>
     <a href="/users">User Info</a>
-    <h1>My Images</h1>
+    <h2>My Images</h2>
     <div ng-controller='inputController'  ng-init='userImages();'>
           <div ng-repeat="image in images" class='images'>
             <div class="caption">
               <p>{{image.name}}</p>
-              {{image.username}}
+              <p>{{image.username}}</p>
             </div>
-            <img ng-src='{{image.file.path + "/" + image.file.originalname}}'class="img-circle" class="img-responsive" height= 100px width= auto margin-top= 10px >
+            <img ng-src='{{image.file.path + "/" + image.file.originalname}}'class="img-circle" class="img-responsive" height= 125px width= 125px margin-top= 10px >
+            <button type="button" name="button" ng-click='deleteImage($index);'>Delete</button>
           </div>
   </body>
 </html>

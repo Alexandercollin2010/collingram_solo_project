@@ -2,8 +2,11 @@
   display:inline-block;
   margin-left: 15px;
   text-align: center;
-  line-height: .9;
+  line-height: .5;
   font-size: 7pt;
+  margin-bottom: 10px;
+  background-color: #1BBB8D;
+  border: 3px solid #0F84F3;
 }
 
 body {
@@ -35,9 +38,19 @@ a {
 
 .users {
   display:inline-block;
-  margin-left: 15px;
-  line-height: .5;
+  margin-left: 10px;
+  line-height: .7;
   font-size: 7pt;
   text-align: left;
-  color: #2BFD05;
+  color: #172029;
+  margin-top: 5px;
+  background-color: #0F84F3;
+  border: 3px solid black;
+
+}
+
+h1 {
+border: 5px solid #0F84F3;
+margin-left: 200px;
+margin-right: 200px;
 }

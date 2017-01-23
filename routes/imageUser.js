@@ -19,5 +19,12 @@ router.get('/photos', function (req, res, next) {
   });
 });
 
+router.delete('/:id', function(req, res){
+  Upload.findByIdAndRemove(req.params.id).then(function(err){
+    console.log('Err: ', err);
+  });
+  res.send(200);
+}); // end delete
+
 
 module.exports = router;
