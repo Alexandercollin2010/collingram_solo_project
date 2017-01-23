@@ -2,20 +2,42 @@
   display:inline-block;
   margin-left: 15px;
   text-align: center;
+  line-height: .9;
+  font-size: 7pt;
 }
 
 body {
   background-image: url(https://zellox.com/wp-content/uploads/2016/05/fishing-backgrounds-%E2%80%AB%E2%80%AC-1440x900.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  text-align: center;
+  font-family: Autour One;
+
+
 }
 
-.imageAdd {
+/*.imageAdd {
   background-image: url(http://wallpapercave.com/wp/Z3OzpBe.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-}
+  text-align: center;
+  color: inherit;
+  align-items: center;
+}*/
 
 a {
   margin-left: 20px;
+}
+
+.file{
+  margin-left: 235px;
+}
+
+.users {
+  display:inline-block;
+  margin-left: 15px;
+  line-height: .5;
+  font-size: 7pt;
+  text-align: left;
+  color: #2BFD05;
 }

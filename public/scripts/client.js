@@ -29,6 +29,18 @@ myApp.controller('registerController',['$scope', '$http', '$window',
   function($scope, $http, $window) {
   console.log('inside register controller');
 
+  $scope.userInfo = function(){
+    $http({
+      method: 'GET',
+      url: '/register/userInfo'
+    }).then(function successCallback(response) {
+      console.log('User Info Success', response);
+      $scope.infos= response.data;
+    }, function errorCallback(error) {
+      console.log('error occurred!');
+    });
+  };// end userInfo
+
   $scope.register = function() {
     var userInfo = {
       username: $scope.username,
@@ -74,9 +86,21 @@ myApp.controller('inputController', ['$scope', '$http', 'Upload','$window',
       console.log('submit', response.data);
       $scope.uploads.push(response.data);
       $scope.upload = {};
-      
+
     });
   };
+
+  $scope.userImages = function(){
+    $http({
+      method: 'GET',
+      url: '/userImages/photos'
+    }).then(function successCallback(response) {
+      console.log('User Info Success', response);
+      $scope.images= response.data;
+    }, function errorCallback(error) {
+      console.log('error occurred!');
+    });
+  };// end userImages
 
 
 

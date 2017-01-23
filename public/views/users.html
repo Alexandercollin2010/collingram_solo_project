@@ -6,13 +6,25 @@
     <script src="./vendors/angular-route.min.js" charset="utf-8"></script>
     <script src="/vendors/ng-file-upload-all.min.js"></script>
     <script src="/scripts/client.js"></script>
+    <link rel="stylesheet" href="/vendors/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendors/master.css">
   </head>
   <body ng-app='myApp'>
     <a href="/uploads">Add Photo</a>
     <a href="/allImages">All Photos</a>
     <a href="/userImages">My Images</a>
     <a href="/users">User Info</a>
-    <h1>All Images</h1>
+    <h1>Members on CollinGram</h1>
+    <div ng-controller='registerController' ng-init='userInfo();'>
+      <div ng-repeat='info in infos' class='users'>
+        <p><strong>Username:</strong>{{info.username}}</p>
+        <p><strong>Email:</strong>{{info.email}}</p>
+        <p><strong>Street Adress:</strong>{{info.streetAdress}}</p>
+        <p><strong>City:</strong>{{info.city}}</p>
+        <p><strong>State:</strong>{{info.state}}</p>
+      </div>
+
+    </div>
 
   </body>
 </html>

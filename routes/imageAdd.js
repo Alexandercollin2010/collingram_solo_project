@@ -57,7 +57,8 @@ router.post('/', upload.single('file'), function (req, res, next) {
   var newUpload = {
     name: req.body.name,
     created: Date.now(),
-    file: req.file
+    file: req.file,
+    username: req.user.username
   };
   Upload.create(newUpload, function (err, next) {
     if (err) {

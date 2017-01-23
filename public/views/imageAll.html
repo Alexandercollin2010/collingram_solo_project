@@ -19,10 +19,11 @@
   <h1>All Images</h1>
   <div ng-controller='inputController'  >
         <div ng-repeat="upload in uploads" class='images'>
-          <div class="caption">
-            <p>{{upload.name}}</p>
-          </div>
-          <img ng-src='{{upload.file.path + "/" + upload.file.originalname}}'class="img-circle" class="img-responsive" height= 100px width= 100px  >
+
+            <p margin-top= 10px>{{upload.name}}</p>
+            <p margin-bottom= 10px>{{upload.username}}</p>
+
+          <img ng-src='{{upload.file.path + "/" + upload.file.originalname}}'class="img-circle" class="img-responsive" height= 150px width= 150px margin-top= 10px margin-bottom= 10px >
         </div>
 
 

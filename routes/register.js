@@ -22,4 +22,13 @@ router.post('/', function(req, res) {
   });
 });
 
+router.get('/userInfo', function(req,res){
+  console.log('In userInfo');
+  UserSchema.find({})
+  .then(function (data){
+    res.send(data);
+  });
+
+});
+
 module.exports = router;

@@ -5,8 +5,9 @@ var path = require('path');
 var Upload = require('../models/photos');
 var multer = require('multer');
 var upload = multer({dest: 'uploads/'});
+var authenticate = require('../utilities/auth');
 
-router.get('/', function(req, res) {
+router.get('/', authenticate, function(req, res) {
   var indexPath = path.join(__dirname, '../public/views/imageAll.html');
   res.sendFile(indexPath);
 });

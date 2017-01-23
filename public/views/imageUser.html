@@ -6,13 +6,22 @@
     <script src="./vendors/angular-route.min.js" charset="utf-8"></script>
     <script src="/vendors/ng-file-upload-all.min.js"></script>
     <script src="/scripts/client.js"></script>
+    <link rel="stylesheet" href="/vendors/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendors/master.css">
   </head>
   <body ng-app='myApp'>
     <a href="/uploads">Add Photo</a>
     <a href="/allImages">All Photos</a>
     <a href="/userImages">My Images</a>
     <a href="/users">User Info</a>
-    <h1>All Images</h1>
-
+    <h1>My Images</h1>
+    <div ng-controller='inputController'  ng-init='userImages();'>
+          <div ng-repeat="image in images" class='images'>
+            <div class="caption">
+              <p>{{image.name}}</p>
+              {{image.username}}
+            </div>
+            <img ng-src='{{image.file.path + "/" + image.file.originalname}}'class="img-circle" class="img-responsive" height= 100px width= auto margin-top= 10px >
+          </div>
   </body>
 </html>
