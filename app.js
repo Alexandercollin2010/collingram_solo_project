@@ -12,6 +12,7 @@ var homeRouter = require('./routes/imageAdd');
 var allImages = require('./routes/imageAll');
 var userImages = require('./routes/imageUser');
 var users = require('./routes/users');
+var updateUser = require('./routes/updateUser');
 
 var app = express();
 
@@ -39,6 +40,7 @@ app.use('/uploads', homeRouter);
 app.use('/allImages', allImages);
 app.use('/userImages', userImages);
 app.use('/users', users);
+app.use('/update', updateUser);
 
 // server port set and listen
 var serverPort = process.env.port || 3003;

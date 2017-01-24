@@ -15,7 +15,6 @@ passport.use('local', new LocalStrategy({
       user.comparePassword(attemptedPass, function(err, isMatch) {
         if(isMatch){
           // this needs the user object
-          console.log('user', user);
           done(null, user, {message: 'Login success!'});
         }else{
           done(null, false, {message: 'Incorrect credentials.'});

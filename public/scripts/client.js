@@ -63,6 +63,27 @@ myApp.controller('registerController',['$scope', '$http', '$window',
       console.log('error occurred!');
     });
   };
+
+
+  $scope.updateUser = function(){
+    var updateInfo = {
+      email: $scope.emailUpdate,
+      streetAdress: $scope.adressUpdate,
+      city: $scope.cityUpdate,
+      state: $scope.stateUpdate
+  };
+
+  $http({
+    method: 'POST',
+    url: '/update/updateUser',
+    data: updateInfo
+  }).then(function successCallback(response) {
+    console.log('success', response);
+    alert('Your info has been updated!!');
+  }, function errorCallback(error) {
+    console.log('error occurred!');
+  });
+};
 }]);
 
 myApp.controller('inputController', ['$scope', '$http', 'Upload','$window',
@@ -86,6 +107,7 @@ myApp.controller('inputController', ['$scope', '$http', 'Upload','$window',
       console.log('submit', response.data);
       $scope.uploads.push(response.data);
       $scope.upload = {};
+      alert('Your file has been uploaded!!');
 
     });
   };

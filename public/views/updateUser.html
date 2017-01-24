@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CollinGram</title>
+    <script src="/vendors/angular.min.js"></script>
+    <script src="./vendors/angular-route.min.js" charset="utf-8"></script>
+    <script src="/vendors/ng-file-upload-all.min.js"></script>
+    <script src="/scripts/client.js"></script>
+    <link rel="stylesheet" href="/vendors/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendors/master.css">
+  </head>
+    <body ng-app="myApp">
+      <h1>CollinGram</h1>
+      <a href="/uploads">Add Photo</a>
+      <a href="/allImages">All Photos</a>
+      <a href="/userImages">My Images</a>
+      <a href="/users">User Info</a>
+      <a href="/update">Update Info</a>
+      <h2>Update Your Info</h2>
+      <form ng-controller="registerController" ng-submit="updateUser()">
+          <label for="email">Email:</label>
+          <input ng-model="emailUpdate" required/>
+        </div>
+        <div>
+          <label for="adress">Street Adress:</label>
+          <input ng-model="adressUpdate" required/>
+        </div>
+        <div>
+          <label for="city">City:</label>
+          <input ng-model="cityUpdate" required/>
+        </div>
+        <div>
+          <label for="state">State:</label>
+          <input ng-model="stateUpdate" required/>
+        </div>
+        <div>
+          <input type="submit" value="Update"/>
+        </div>
+      </form>
+  </body>
+</html>
