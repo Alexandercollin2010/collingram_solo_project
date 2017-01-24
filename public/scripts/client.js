@@ -20,7 +20,7 @@ myApp.controller('mainController',['$scope', '$http', '$window',
       $window.location.href = '/uploads';
     }, function errorCallback(error) {
       console.log('error', error);
-      $window.location.href = '/';
+      $window.location.href = '/uploads';
     });
   };
 }]);
@@ -109,6 +109,9 @@ myApp.controller('inputController', ['$scope', '$http', 'Upload','$window',
       $scope.upload = {};
       alert('Your file has been uploaded!!');
 
+    }, function errorCallback(error) {
+      console.log('error occurred!');
+      alert('This file already exists!!');
     });
   };
 

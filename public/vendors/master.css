@@ -37,20 +37,35 @@ a {
 }
 
 .users {
-  display:inline-block;
-  margin-left: 10px;
-  line-height: .7;
-  font-size: 7pt;
-  text-align: left;
-  color: #172029;
-  margin-top: 5px;
-  background-color: #0F84F3;
-  border: 3px solid black;
+text-align: left;
+
+
+
+
 
 }
 
-h1 {
-border: 5px solid #0F84F3;
-margin-left: 200px;
-margin-right: 200px;
+
+
+.col-sm-2 {
+  display:inline;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 6pt;
+    background-color: grey;
+}
+
+td, th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: white;
+    border: 1px solid black;
 }

@@ -1,32 +1,42 @@
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <script src="/vendors/angular.min.js"></script>
-    <script src="./vendors/angular-route.min.js" charset="utf-8"></script>
-    <script src="/vendors/ng-file-upload-all.min.js"></script>
-    <script src="/scripts/client.js"></script>
-    <link rel="stylesheet" href="/vendors/bootstrap.min.css">
-    <link rel="stylesheet" href="/vendors/master.css">
-  </head>
-  <body ng-app='myApp'>
-    <h1>CollinGram</h1>
-    <a href="/uploads">Add Photo</a>
-    <a href="/allImages">All Photos</a>
-    <a href="/userImages">My Images</a>
-    <a href="/users">User Info</a>
-    <a href="/update">Update Info</a>
-    <h2>Members on CollinGram</h2>
-    <div ng-controller='registerController' ng-init='userInfo();'>
-      <div ng-repeat='info in infos' class='users' class='img-cirlce'>
-        <p><strong>Username:</strong>{{info.username}}</p>
-        <p><strong>Email:</strong>{{info.email}}</p>
-        <p><strong>Street Adress:</strong>{{info.streetAdress}}</p>
-        <p><strong>City:</strong>{{info.city}}</p>
-        <p><strong>State:</strong>{{info.state}}</p>
-      </div>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="/vendors/angular.min.js"></script>
+  <script src="./vendors/angular-route.min.js" charset="utf-8"></script>
+  <script src="/vendors/ng-file-upload-all.min.js"></script>
+  <script src="/scripts/client.js"></script>
+  <link rel="stylesheet" href="/vendors/bootstrap.min.css">
+  <link rel="stylesheet" href="/vendors/master.css">
+</head>
+<body ng-app='myApp'>
+  <h1>CollinGram</h1>
+  <a href="/uploads">Add Photo</a>
+  <a href="/allImages">All Photos</a>
+  <a href="/userImages">My Images</a>
+  <a href="/users">User Info</a>
+  <a href="/update">Update Info</a>
+  <h2>Members on CollinGram</h2>
+  <div ng-controller='registerController' ng-init='userInfo();' class='users'>
+    <table>
+      <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Street Adress</th>
+        <th>City</th>
+        <th>State</th>
+      </tr>
+      <tr ng-repeat='info in infos'>
+        <td>{{info.username}}</td>
+        <td>{{info.email}}</td>
+        <td>{{info.streetAdress}}</td>
+        <td>{{info.city}}</td>
+        <td>{{info.state}}</td>
+      </tr>
+    </table>
 
-    </div>
 
-  </body>
+  </div>
+
+</body>
 </html>
