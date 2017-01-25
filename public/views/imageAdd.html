@@ -2,15 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>File Upload Example</title>
+  <title>CollinGram</title>
   <script src="/vendors/angular.min.js"></script>
   <script src="./vendors/angular-route.min.js" charset="utf-8"></script>
   <script src="/vendors/ng-file-upload-all.min.js"></script>
+  <script src="/vendors/sweetalert.min.js"></script>
   <script src="/scripts/client.js"></script>
   <link rel="stylesheet" href="/vendors/bootstrap.min.css">
   <link rel="stylesheet" href="/vendors/master.css">
+  <link rel="stylesheet" href="/vendors/sweetalert.css">
 </head>
 <body ng-app="myApp" class='imageAdd'>
+  <div ng-controller= 'mainController'>
+    <button type="button" ng-click='logout();' class='btn-xs'>Logout</button>
+</div>
+  <div class= 'everything'>
   <h1>CollinGram</h1>
   <a href="/uploads">Add Photo</a>
   <a href="/allImages">All Photos</a>
@@ -32,6 +38,6 @@
 
 
 </div>
-
+</div>
 </body>
 </html>

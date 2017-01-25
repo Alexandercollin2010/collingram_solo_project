@@ -12,4 +12,11 @@ router.post('/', passport.authenticate('local'), function(req, res) {
     res.sendStatus(200);
 });
 
+router.get('/logout', function (req, res) {
+  console.log('In log out!');
+  req.logout();
+  req.session.destroy();
+  res.redirect('/');
+});
+
 module.exports = router;

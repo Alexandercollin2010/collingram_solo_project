@@ -62,7 +62,7 @@ router.post('/', upload.single('file'), function (req, res, next) {
   };
   Upload.create(newUpload, function (err, next) {
     if (err) {
-      res.send(err);
+      res.sendStatus(404);
     } else {
       res.send(newUpload);
     }

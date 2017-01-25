@@ -23,7 +23,26 @@ myApp.controller('mainController',['$scope', '$http', '$window',
       $window.location.href = '/uploads';
     });
   };
+
+  $scope.logout = function(){
+
+    $http({
+      method: 'GET',
+      url: '/index/logout'
+    }).then(function successCallback(response) {
+      console.log('User logout Success', response);
+      $window.location.href = '/';
+    }, function errorCallback(error) {
+      console.log('Still logged in!!');
+    });
+
+  };
 }]);
+
+
+
+
+
 
 myApp.controller('registerController',['$scope', '$http', '$window',
   function($scope, $http, $window) {
@@ -79,10 +98,14 @@ myApp.controller('registerController',['$scope', '$http', '$window',
     data: updateInfo
   }).then(function successCallback(response) {
     console.log('success', response);
-    alert('Your info has been updated!!');
+    swal("Awesome!!", "Your info has been updated!", "success");
   }, function errorCallback(error) {
     console.log('error occurred!');
   });
+  $scope.emailUpdate = '';
+  $scope.adressUpdate = '';
+  $scope.cityUpdate = '';
+  $scope.stateUpdate = '';
 };
 }]);
 
@@ -107,11 +130,11 @@ myApp.controller('inputController', ['$scope', '$http', 'Upload','$window',
       console.log('submit', response.data);
       $scope.uploads.push(response.data);
       $scope.upload = {};
-      alert('Your file has been uploaded!!');
+      swal("Good job!", "You Submitted the Photo!!");
 
     }, function errorCallback(error) {
       console.log('error occurred!');
-      alert('This file already exists!!');
+      swal('Uh-Oh!!!', "This File Already Exists!");
     });
   };
 
@@ -130,8 +153,18 @@ myApp.controller('inputController', ['$scope', '$http', 'Upload','$window',
   $scope.deleteImage = function( indexIn ){
     //console.log( 'confirming removal of:', $scope.allTheHeros[ indexIn ] );
     var imageToDelete = $scope.images[ indexIn ]._id;
-    if( confirm( 'Remove ' + $scope.images[ indexIn ].name + '?' ) ){
-      //console.log( 'removing:', $scope.allTheHeros[ indexIn ] );
+    swal({
+   title: "Are you sure?",
+   text: "You will not be able to recover this photo!",
+   type: "warning",
+   showCancelButton: true,
+   confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, delete it!",
+   cancelButtonText: "No, cancel plx!",
+   closeOnConfirm: false,
+   closeOnCancel: false },
+function(isConfirm){
+   if (isConfirm) {
+      swal("Deleted!", "Your photo has been deleted.", "success");
       $http({
         method: 'DELETE',
         url: '/userImages/' + $scope.images[ indexIn ]._id
@@ -139,7 +172,11 @@ myApp.controller('inputController', ['$scope', '$http', 'Upload','$window',
         console.log(response);
         $scope.userImages();
       });
-    }
+   } else {
+      swal("Cancelled", "Your photo is safe :)", "error");
+   }
+});
+
   };
 
 

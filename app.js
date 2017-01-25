@@ -34,6 +34,7 @@ app.use(passport.session());
 
 // Routers
 app.use(logger('dev'));
+app.use('/index', indexRouter);
 app.use('/', indexRouter);
 app.use('/register', registerRouter);
 app.use('/uploads', homeRouter);

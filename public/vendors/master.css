@@ -6,7 +6,7 @@
   font-size: 7pt;
   margin-bottom: 10px;
   background-color: #1BBB8D;
-  border: 3px solid #0F84F3;
+  border: 3px solid black;
 }
 
 body {
@@ -19,14 +19,9 @@ body {
 
 }
 
-/*.imageAdd {
-  background-image: url(http://wallpapercave.com/wp/Z3OzpBe.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  text-align: center;
-  color: inherit;
-  align-items: center;
-}*/
+.logout{
+ 
+}
 
 a {
   margin-left: 20px;
@@ -36,20 +31,7 @@ a {
   margin-left: 235px;
 }
 
-.users {
-text-align: left;
 
-
-
-
-
-}
-
-
-
-.col-sm-2 {
-  display:inline;
-}
 
 table {
     font-family: arial, sans-serif;
