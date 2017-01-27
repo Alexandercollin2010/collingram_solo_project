@@ -19,4 +19,10 @@ router.get('/logout', function (req, res) {
   res.redirect('/');
 });
 
+router.get('/user', function (req,res) {
+  var user = { username: req.user.username };
+    res.send(user);
+
+});
+
 module.exports = router;

@@ -12,13 +12,14 @@
   <link rel="stylesheet" href="/vendors/sweetalert.css">
   <style media="screen">
   html {margin: 0 auto; text-align: center;}
-  .everything {background-color: lightblue;  list-style-type: none; }
+  .everything {background-color: lightblue; border-radius: 10px; list-style-type: none; }
 
   </style>
 </head>
 <body ng-app='myApp'>
-  <div ng-controller= 'mainController'>
+  <div ng-controller= 'mainController' ng-init= 'getUser();'>
     <button type="button" ng-click='logout();' class='btn-xs btn-danger' >Logout</button>
+    {{usernames}}
   </div>
 
   <h1>CollinGram</h1>

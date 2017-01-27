@@ -18,8 +18,9 @@
   </style>
 </head>
 <body ng-app='myApp'>
-  <div ng-controller= 'mainController'>
+  <div ng-controller= 'mainController' ng-init= 'getUser();'>
     <button type="button" ng-click='logout();' class='btn-xs btn-danger' >Logout</button>
+      {{usernames}}
   </div>
 
   <h1>CollinGram</h1>

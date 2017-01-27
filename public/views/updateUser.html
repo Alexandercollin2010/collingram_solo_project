@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
   </head>
     <body ng-app="myApp">
-      <div ng-controller= 'mainController'>
+      <div ng-controller= 'mainController' ng-init= 'getUser();'>
         <button type="button" ng-click='logout();' class='btn-xs btn-danger' >Logout</button>
+        {{usernames}}
     </div>
       <div class= 'everything'>
       <h1>CollinGram</h1>

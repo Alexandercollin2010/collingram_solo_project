@@ -54,6 +54,20 @@ function(isConfirm){
 });
 
   };
+
+  $scope.getUser = function(){
+    $http({
+      method: 'GET',
+      url: '/index/user'
+    }).then(function successCallback(response) {
+      console.log('Get user', response);
+      $scope.usernames = response.data.username ;
+
+    }, function errorCallback(error) {
+      console.log('Did not get the user');
+    });
+  };
+
 }]);
 
 
