@@ -20,21 +20,38 @@ myApp.controller('mainController',['$scope', '$http', '$window',
       $window.location.href = '/uploads';
     }, function errorCallback(error) {
       console.log('error', error);
-      $window.location.href = '/uploads';
+      swal("Oh no you don't!!", "Wrong password or username!!");
     });
+
   };
 
   $scope.logout = function(){
 
-    $http({
-      method: 'GET',
-      url: '/index/logout'
-    }).then(function successCallback(response) {
-      console.log('User logout Success', response);
-      $window.location.href = '/';
-    }, function errorCallback(error) {
-      console.log('Still logged in!!');
-    });
+    swal({
+   title: "Are you sure?",
+   text: "You will be logged out!",
+   type: "warning",
+   showCancelButton: true,
+   confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, log out!",
+   cancelButtonText: "No, cancel please!",
+   closeOnConfirm: false,
+   closeOnCancel: false },
+function(isConfirm){
+   if (isConfirm) {
+      $http({
+        method: 'GET',
+        url: '/index/logout'
+      }).then(function successCallback(response) {
+        console.log('User logout Success', response);
+        $window.location.href = '/';
+
+      }, function errorCallback(error) {
+        console.log('Still logged in!!');
+      });
+   } else {
+      swal("Cancelled", "You are still logged in!", "error");
+   }
+});
 
   };
 }]);
@@ -71,17 +88,35 @@ myApp.controller('registerController',['$scope', '$http', '$window',
 
     };
 
-    $http({
-      method: 'POST',
-      url: '/register',
-      data: userInfo
-    }).then(function successCallback(response) {
-      console.log('success', response);
-      $window.location.href = '/';
-    }, function errorCallback(error) {
-      console.log('error occurred!');
-    });
+    swal({
+   title: "Are you sure?",
+   text: "Did you spell everything right?!",
+   type: "warning",
+   showCancelButton: true,
+   confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, I want to Register",
+   cancelButtonText: "No, cancel please!",
+   closeOnConfirm: false,
+   closeOnCancel: false },
+  function(isConfirm){
+   if (isConfirm) {
+
+
+     $http({
+       method: 'POST',
+       url: '/register',
+       data: userInfo
+     }).then(function successCallback(response) {
+       console.log('success', response);
+       $window.location.href = '/';
+     },function errorCallback(error) {
+       console.log('error occurred!');
+     });
+   } else {
+      swal("Cancelled", "You can fix those errors now!", "error");
+   }
+ });
   };
+
 
 
   $scope.updateUser = function(){
@@ -159,12 +194,12 @@ myApp.controller('inputController', ['$scope', '$http', 'Upload','$window',
    type: "warning",
    showCancelButton: true,
    confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, delete it!",
-   cancelButtonText: "No, cancel plx!",
+   cancelButtonText: "No, cancel please!",
    closeOnConfirm: false,
    closeOnCancel: false },
 function(isConfirm){
    if (isConfirm) {
-      swal("Deleted!", "Your photo has been deleted.", "success");
+      swal("Deleted!", "It Gone!!!", "success");
       $http({
         method: 'DELETE',
         url: '/userImages/' + $scope.images[ indexIn ]._id

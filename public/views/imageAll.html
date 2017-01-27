@@ -11,28 +11,35 @@
   <link rel="stylesheet" href="/vendors/bootstrap.min.css">
   <link rel="stylesheet" href="/vendors/master.css">
   <link rel="stylesheet" href="/vendors/sweetalert.css">
+  <style media="screen">
+    html {margin: 0 auto; text-align: center;}
+    .everything {background-color: lightblue; border-radius: 10px;  list-style-type: none; }
+
+  </style>
 </head>
 <body ng-app='myApp'>
   <div ng-controller= 'mainController'>
-    <button type="button" ng-click='logout();' class='btn-xs'>Logout</button>
-</div>
-  <div class= 'everything'>
-<h1>CollinGram</h1>
+    <button type="button" ng-click='logout();' class='btn-xs btn-danger' >Logout</button>
+  </div>
+
+  <h1>CollinGram</h1>
   <a href="/uploads">Add Photo</a>
   <a href="/allImages">All Photos</a>
   <a href="/userImages">My Images</a>
   <a href="/users">User Info</a>
   <a href="/update">Update Info</a>
   <h2>All Images</h2>
+
   <div ng-controller='inputController'  >
-        <div ng-repeat="upload in uploads" class='images'>
-
-            <p margin-top= 10px>{{upload.name}}</p>
-            <p margin-bottom= 10px>{{upload.username}}</p>
-
-          <img ng-src='{{upload.file.path + "/" + upload.file.originalname}}'class="img-circle" class="img-responsive" height= 150px width= 150px margin-top= 10px margin-bottom= 10px >
+    <div ng-repeat="upload in uploads" class='images'>
+      <div class= 'everything'>
+        <div class="text">
+          <p margin-top= 10px>{{upload.name}}</p>
+          <p margin-bottom= 10px>Added By: {{upload.username}}</p>
         </div>
-
+        <img ng-src='{{upload.file.path + "/" + upload.file.originalname}}'class="img-circle" class="img-responsive" height= 150px width= auto   >
+      </div>
+    </div>
 
   </div>
 </div>

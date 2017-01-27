@@ -14,7 +14,7 @@
 </head>
 <body ng-app="myApp" class='imageAdd'>
   <div ng-controller= 'mainController'>
-    <button type="button" ng-click='logout();' class='btn-xs'>Logout</button>
+    <button type="button" ng-click='logout();' class='btn-xs btn-danger' >Logout</button>
 </div>
   <div class= 'everything'>
   <h1>CollinGram</h1>
@@ -31,9 +31,12 @@
     <label for="name">Name:</label>
     <input type="text" name="name" id="name" ng-model="upload.name" required/>
     <br/>
+    <label class= 'upload'>
     <input class='file' type="file" name="file"  ng-model="upload.file" ngf-select ngf-max-size="25MB" required/>
+      Select a File
+    </label>
     <br/>
-    <input type="submit" value="Submit"/>
+    <input type="submit" value="Submit" class= 'btn-primary'/>
   </form>
 
 

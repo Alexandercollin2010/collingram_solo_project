@@ -13,7 +13,7 @@
   </head>
     <body ng-app="myApp">
       <h1>CollinGram</h1>
-      <h2>CollinGram Login</h2>
+      <h2>Login</h2>
       <form ng-controller="mainController">
         <div>
           <label for="username">Username:</label>
@@ -24,7 +24,7 @@
           <input ng-model="password" type="password" name="password" id="password"/>
         </div>
         <div>
-          <input ng-click="login()" type="submit" value="Log In"/>
+          <input ng-click="login()" type="submit" value="Log In" class= 'btn-primary'/>
           <a href="/register">Register</a>
         </div>
 
