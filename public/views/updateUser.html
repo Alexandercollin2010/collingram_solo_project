@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/vendors/bootstrap.min.css">
     <link rel="stylesheet" href="/vendors/master.css">
     <link rel="stylesheet" href="/vendors/sweetalert.css">
-    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <!-- <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"> -->
   </head>
     <body ng-app="myApp">
       <div ng-controller= 'mainController' ng-init= 'getUser();'>
@@ -22,26 +22,30 @@
       <a href="/uploads">Add Photo</a>
       <a href="/allImages">All Photos</a>
       <a href="/userImages">My Images</a>
-      <a href="/users">User Info</a>
+      <a href="/users">Family Info</a>
       <a href="/update">Update Info</a>
-        <div class="w3-container w3-blue"  >
+        <div>
     <h4>Update User Info</h4>
     </div>
 
-    <form class="w3-container" ng-controller="registerController" ng-submit="updateUser()">
-    <p>
-    <label>Email</label>
-    <input class="w3-input" type="email" ng-model="emailUpdate" required></p>
-    <p>
-    <label>Street Adress</label>
-    <input class="w3-input" type="text" ng-model="adressUpdate" required></p>
-    <p>
-    <label>City</label>
-    <input class="w3-input" type="text" ng-model="cityUpdate" required></p>
-    <p>
-    <label>State</label>
-    <input class="w3-input" type="text" ng-model="stateUpdate" required></p>
+    <form  ng-controller="registerController" ng-submit="updateUser()">
 
+    <label>Email</label>
+    </br>
+    <input class="w3-input" type="email" ng-model="emailUpdate" required>
+    </br>
+    <label>Street Adress</label>
+    </br>
+    <input class="w3-input" type="text" ng-model="adressUpdate" required>
+    </br>
+    <label>City</label>
+    </br>
+    <input class="w3-input" type="text" ng-model="cityUpdate" required>
+    </br>
+    <label>State</label>
+    </br>
+    <input class="w3-input" type="text" ng-model="stateUpdate" required>
+</br>
     <input type="submit" value="Update" class= 'btn-primary'/>
     </form>
     </div>

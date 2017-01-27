@@ -11,34 +11,41 @@
     <link rel="stylesheet" href="/vendors/bootstrap.min.css">
     <link rel="stylesheet" href="/vendors/master.css">
     <link rel="stylesheet" href="/vendors/sweetalert.css">
-    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <!-- <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"> -->
   </head>
     <body ng-app="myApp">
       <h1>CollinGram</h1>
       <form ng-controller="registerController" ng-submit="register();" ng-submit="changePage();">
-        <div class="w3-container w3-blue"  >
+        <div   >
     <h4>Register</h4>
   </div>
-<div class="w3-container">
-  <form class="w3-container">
-    <p>
+<div >
+  <form class="register">
+
     <label>Username</label>
-    <input class="w3-input" type="text" ng-model="username" required></p>
-    <p>
+  </br>
+    <input  type="text" ng-model="username" required>
+   </br>
     <label>Password</label>
-    <input class="w3-input" type="password" ng-model="password" required></p>
-    <p>
+    </br>
+    <input  type="password" ng-model="password" required>
+</br>
     <label>Email</label>
-    <input class="w3-input" type="email" ng-model="email" required></p>
-    <p>
+    </br>
+    <input  type="email" ng-model="email" required>
+</br>
     <label>Street Adress</label>
-    <input class="w3-input" type="text" ng-model="adress" required></p>
-    <p>
+    </br>
+    <input  type="text" ng-model="adress" required>
+</br>
     <label>City</label>
-    <input class="w3-input" type="text" ng-model="city" required></p>
-    <p>
+    </br>
+    <input  type="text" ng-model="city" required>
+</br>
     <label>State</label>
-    <input class="w3-input" type="text" ng-model="state" required></p>
+    </br>
+    <input  type="text" ng-model="state" required>
+  </br>
     <input type="submit" value="Register" class= 'btn-primary'/>
   </form>
 </div>
