@@ -16,8 +16,8 @@ router.get('/', user, function(req, res) {
 });
 
 /**
- * Gets the list of all files from the database
- */
+* Gets the list of all files from the database
+*/
 router.get('/photos', function (req, res, next) {
   Upload.find({},  function (err, uploads) {
     if (err) next(err);
@@ -28,8 +28,8 @@ router.get('/photos', function (req, res, next) {
 });
 
 /**
- * Gets a file from the hard drive based on the unique ID and the filename
- */
+* Gets a file from the hard drive based on the unique ID and the filename
+*/
 router.get('/:uuid/:filename', function (req, res, next) {
   console.log('dammit ',req.params);
   Upload.findOne({
@@ -49,8 +49,8 @@ router.get('/:uuid/:filename', function (req, res, next) {
 });
 
 /**
- * Create's the file in the database
- */
+* Create's the file in the database
+*/
 router.post('/', upload.single('file'), function (req, res, next) {
   console.log(req.body);
   console.log(req.file);

@@ -3,7 +3,7 @@ var bcrypt = require('bcrypt');
 var Schema = mongoose.Schema;
 var SALT_WORK_FACTOR = 10;
 
-
+// adding anyone who registers to the database
 var UserSchema = new Schema({
   username: {type: String, required: true, unique: true},
   password: {type: String, required: true},
@@ -13,7 +13,7 @@ var UserSchema = new Schema({
   state: String
 });
 
-// Must encrypt, salt and hash the password
+// creating a crypted password for the user
 UserSchema.pre('save', function(next) {
   var user = this;
 

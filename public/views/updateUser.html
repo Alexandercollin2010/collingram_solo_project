@@ -1,55 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CollinGram</title>
-    <script src="/vendors/angular.min.js"></script>
-    <script src="./vendors/angular-route.min.js" charset="utf-8"></script>
-    <script src="/vendors/ng-file-upload-all.min.js"></script>
-    <script src="/vendors/sweetalert.min.js"></script>
-    <script src="/scripts/client.js"></script>
-    <link rel="stylesheet" href="/vendors/bootstrap.min.css">
-    <link rel="stylesheet" href="/vendors/master.css">
-    <link rel="stylesheet" href="/vendors/sweetalert.css">
-    <!-- <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"> -->
-  </head>
-    <body ng-app="myApp">
-      <div ng-controller= 'mainController' ng-init= 'getUser();'>
-        <button type="button" ng-click='logout();' class='btn-xs btn-danger' >Logout</button>
-        {{usernames}}
-    </div>
-      <div class= 'everything'>
-      <h1>CollinGram</h1>
-      <a href="/uploads">Add Photo</a>
-      <a href="/allImages">All Photos</a>
-      <a href="/userImages">My Images</a>
-      <a href="/users">Family Info</a>
-      <a href="/update">Update Info</a>
-        <div>
-    <h4>Update User Info</h4>
+<head>
+  <title>CollinGram</title>
+  <script src="/vendors/angular.min.js"></script>
+  <script src="./vendors/angular-route.min.js" charset="utf-8"></script>
+  <script src="/vendors/ng-file-upload-all.min.js"></script>
+  <script src="/vendors/sweetalert.min.js"></script>
+  <script src="/scripts/client.js"></script>
+  <link rel="stylesheet" href="/vendors/bootstrap.min.css">
+  <link rel="stylesheet" href="/vendors/master.css">
+  <link rel="stylesheet" href="/vendors/sweetalert.css">
+  <!-- <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"> -->
+</head>
+<body ng-app="myApp">
+  <div ng-controller= 'mainController' ng-init= 'getUser();'>
+    <button type="button" ng-click='logout();' class='btn-xs btn-danger' >Logout</button>
+    {{usernames}}
+  </div>
+  <div class= 'everything'>
+    <h1>CollinGram</h1>
+    <a href="/uploads">Add Photo</a>
+    <a href="/allImages">All Photos</a>
+    <a href="/userImages">My Images</a>
+    <a href="/users">Family Info</a>
+    <a href="/update">Update Info</a>
+    <div>
+      <h4>Update User Info</h4>
     </div>
 
     <form  ng-controller="registerController" ng-submit="updateUser()">
 
-    <label>Email</label>
+      <label>Email</label>
     </br>
     <input class="w3-input" type="email" ng-model="emailUpdate" required>
-    </br>
-    <label>Street Adress</label>
-    </br>
-    <input class="w3-input" type="text" ng-model="adressUpdate" required>
-    </br>
-    <label>City</label>
-    </br>
-    <input class="w3-input" type="text" ng-model="cityUpdate" required>
-    </br>
-    <label>State</label>
-    </br>
-    <input class="w3-input" type="text" ng-model="stateUpdate" required>
+  </br>
+  <label>Street Adress</label>
 </br>
-    <input type="submit" value="Update" class= 'btn-primary'/>
-    </form>
-    </div>
+<input class="w3-input" type="text" ng-model="adressUpdate" required>
+</br>
+<label>City</label>
+</br>
+<input class="w3-input" type="text" ng-model="cityUpdate" required>
+</br>
+<label>State</label>
+</br>
+<input class="w3-input" type="text" ng-model="stateUpdate" required>
+</br>
+<input type="submit" value="Update" class= 'btn-primary'/>
+</form>
+</div>
 
 
-  </body>
+</body>
 </html>

@@ -16,32 +16,32 @@
   <div ng-controller= 'mainController' ng-init= 'getUser();'>
     <button type="button" ng-click='logout();' class='btn-xs btn-danger' >Logout</button>
     {{usernames}}
-</div>
+  </div>
   <div class= 'everything'>
-  <h1>CollinGram</h1>
-  <a href="/uploads">Add Photo</a>
-  <a href="/allImages">All Photos</a>
-  <a href="/userImages">My Images</a>
-  <a href="/users">Family Info</a>
-  <a href="/update">Update Info</a>
-<div ng-controller="inputController">
-  <h2>Upload Your Image!!</h2>
+    <h1>CollinGram</h1>
+    <a href="/uploads">Add Photo</a>
+    <a href="/allImages">All Photos</a>
+    <a href="/userImages">My Images</a>
+    <a href="/users">Family Info</a>
+    <a href="/update">Update Info</a>
+    <div ng-controller="inputController">
+      <h2>Upload Your Image!!</h2>
 
-  <form ng-submit="submit()">
-    <h3>Upload a new image here:</h3>
-    <label for="name" class='black'>Name:</label>
-    <input type="text" name="name" id="name" ng-model="upload.name" required/>
-    <br/>
-    <label class= 'upload'>
-    <input class='file' type="file" name="file"  ng-model="upload.file" ngf-select ngf-max-size="25MB" required/>
-      Select a File
-    </label>
-    <br/>
-    <input type="submit" value="Submit" class= 'btn-primary'/>
-  </form>
+      <form ng-submit="submit()">
+        <h3>Upload a new image here:</h3>
+        <label for="name" class='black'>Name:</label>
+        <input type="text" name="name" id="name" ng-model="upload.name" required/>
+        <br/>
+        <label class= 'upload'>
+          <input class='file' type="file" name="file"  ng-model="upload.file" ngf-select ngf-max-size="25MB" required/>
+          Select a File
+        </label>
+        <br/>
+        <input type="submit" value="Submit" class= 'btn-primary'/>
+      </form>
 
 
-</div>
-</div>
+    </div>
+  </div>
 </body>
 </html>

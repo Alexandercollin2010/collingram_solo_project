@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <title>CollinGram</title>
-    <script src="/vendors/angular.min.js"></script>
-    <script src="./vendors/angular-route.min.js" charset="utf-8"></script>
-    <script src="/vendors/ng-file-upload-all.min.js"></script>
-    <script src="/vendors/sweetalert.min.js"></script>
-    <script src="/scripts/client.js"></script>
-    <link rel="stylesheet" href="/vendors/bootstrap.min.css">
-    <link rel="stylesheet" href="/vendors/master.css">
-    <link rel="stylesheet" href="/vendors/sweetalert.css">
-    <!-- <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"> -->
-  </head>
-    <body ng-app="myApp">
-      <h1>CollinGram</h1>
-      <form ng-controller="registerController" ng-submit="register();" ng-submit="changePage();">
-        <div   >
-    <h4>Register</h4>
-  </div>
-<div >
-  <form class="register">
+<head>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <title>CollinGram</title>
+  <script src="/vendors/angular.min.js"></script>
+  <script src="./vendors/angular-route.min.js" charset="utf-8"></script>
+  <script src="/vendors/ng-file-upload-all.min.js"></script>
+  <script src="/vendors/sweetalert.min.js"></script>
+  <script src="/scripts/client.js"></script>
+  <link rel="stylesheet" href="/vendors/bootstrap.min.css">
+  <link rel="stylesheet" href="/vendors/master.css">
+  <link rel="stylesheet" href="/vendors/sweetalert.css">
+  <!-- <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"> -->
+</head>
+<body ng-app="myApp">
+  <h1>CollinGram</h1>
+  <form ng-controller="registerController" ng-submit="register();" ng-submit="changePage();">
+    <div   >
+      <h4>Register</h4>
+    </div>
+    <div >
+      <form class="register">
 
-    <label>Username</label>
-  </br>
-    <input  type="text" ng-model="username" required>
-   </br>
+        <label>Username</label>
+      </br>
+      <input  type="text" ng-model="username" required>
+    </br>
     <label>Password</label>
-    </br>
-    <input  type="password" ng-model="password" required>
-</br>
-    <label>Email</label>
-    </br>
-    <input  type="email" ng-model="email" required>
-</br>
-    <label>Street Adress</label>
-    </br>
-    <input  type="text" ng-model="adress" required>
-</br>
-    <label>City</label>
-    </br>
-    <input  type="text" ng-model="city" required>
-</br>
-    <label>State</label>
-    </br>
-    <input  type="text" ng-model="state" required>
   </br>
-    <input type="submit" value="Register" class= 'btn-primary'/>
-  </form>
+  <input  type="password" ng-model="password" required>
+</br>
+<label>Email</label>
+</br>
+<input  type="email" ng-model="email" required>
+</br>
+<label>Street Adress</label>
+</br>
+<input  type="text" ng-model="adress" required>
+</br>
+<label>City</label>
+</br>
+<input  type="text" ng-model="city" required>
+</br>
+<label>State</label>
+</br>
+<input  type="text" ng-model="state" required>
+</br>
+<input type="submit" value="Register" class= 'btn-primary'/>
+</form>
 </div>

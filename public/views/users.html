@@ -15,36 +15,36 @@
   <div ng-controller= 'mainController' ng-init= 'getUser();'>
     <button type="button" ng-click='logout();' class='btn-xs btn-danger' >Logout</button>
     {{usernames}}
-</div>
-  <div class= 'everything'>
-  <h1>CollinGram</h1>
-  <a href="/uploads">Add Photo</a>
-  <a href="/allImages">All Photos</a>
-  <a href="/userImages">My Images</a>
-  <a href="/users">Family Info</a>
-  <a href="/update">Update Info</a>
-  <h3>CollinGram Family</h3>
-  <div ng-controller='registerController' ng-init='userInfo();' class='users'>
-    <table>
-      <tr>
-        <th>Username</th>
-        <th>Email</th>
-        <th>Street Adress</th>
-        <th>City</th>
-        <th>State</th>
-      </tr>
-      <tr ng-repeat='info in infos'>
-        <td>{{info.username}}</td>
-        <td>{{info.email}}</td>
-        <td>{{info.streetAdress}}</td>
-        <td>{{info.city}}</td>
-        <td>{{info.state}}</td>
-      </tr>
-    </table>
-
-
   </div>
-</div>
+  <div class= 'everything'>
+    <h1>CollinGram</h1>
+    <a href="/uploads">Add Photo</a>
+    <a href="/allImages">All Photos</a>
+    <a href="/userImages">My Images</a>
+    <a href="/users">Family Info</a>
+    <a href="/update">Update Info</a>
+    <h3>CollinGram Family</h3>
+    <div ng-controller='registerController' ng-init='userInfo();' class='users'>
+      <table>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Street Adress</th>
+          <th>City</th>
+          <th>State</th>
+        </tr>
+        <tr ng-repeat='info in infos'>
+          <td>{{info.username}}</td>
+          <td>{{info.email}}</td>
+          <td>{{info.streetAdress}}</td>
+          <td>{{info.city}}</td>
+          <td>{{info.state}}</td>
+        </tr>
+      </table>
+
+
+    </div>
+  </div>
 
 </body>
 </html>

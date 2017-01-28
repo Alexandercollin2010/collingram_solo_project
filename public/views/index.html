@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CollinGram</title>
-    <script src="/vendors/angular.min.js"></script>
-    <script src="./vendors/angular-route.min.js" charset="utf-8"></script>
-    <script src="/vendors/ng-file-upload-all.min.js"></script>
-    <script src="/vendors/sweetalert.min.js"></script>
-    <script src="/scripts/client.js"></script>
-    <link rel="stylesheet" href="/vendors/bootstrap.min.css">
-    <link rel="stylesheet" href="/vendors/master.css">
-    <link rel="stylesheet" href="/vendors/sweetalert.css">
-  </head>
-    <body ng-app="myApp">
-      <h1>CollinGram</h1>
-      <h2>Login</h2>
-      <form ng-controller="mainController">
-        <div>
-          <label for="username" class='black'>Username:</label>
-        </br>
-          <input ng-model="username" type="text" name="username" id="username"/>
-        </div>
-        <div>
-          <label for="password" class= 'black'>Password:</label>
-        </br>
-          <input ng-model="password" type="password" name="password" id="password"/>
-        </div>
-        <div>
-          <input ng-click="login()" type="submit" value="Log In" class= 'btn-primary'/>
-          <a href="/register">Register</a>
-        </div>
+<head>
+  <title>CollinGram</title>
+  <script src="/vendors/angular.min.js"></script>
+  <script src="./vendors/angular-route.min.js" charset="utf-8"></script>
+  <script src="/vendors/ng-file-upload-all.min.js"></script>
+  <script src="/vendors/sweetalert.min.js"></script>
+  <script src="/scripts/client.js"></script>
+  <link rel="stylesheet" href="/vendors/bootstrap.min.css">
+  <link rel="stylesheet" href="/vendors/master.css">
+  <link rel="stylesheet" href="/vendors/sweetalert.css">
+</head>
+<body ng-app="myApp">
+  <h1>CollinGram</h1>
+  <h2>Login</h2>
+  <form ng-controller="mainController">
+    <div>
+      <label for="username" class='black'>Username:</label>
+    </br>
+    <input ng-model="username" type="text" name="username" id="username"/>
+  </div>
+  <div>
+    <label for="password" class= 'black'>Password:</label>
+  </br>
+  <input ng-model="password" type="password" name="password" id="password"/>
+</div>
+<div>
+  <input ng-click="login()" type="submit" value="Log In" class= 'btn-primary'/>
+  <a href="/register">Register</a>
+</div>
 
-      </form>
-  </body>
+</form>
+</body>
 </html>
