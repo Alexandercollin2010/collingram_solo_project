@@ -52,7 +52,7 @@ var server = app.listen(serverPort, function() {
 });
 
 // connect to the mongodb
-var mongoURI = "mongodb://localhost:27017/shelfDatabase";
+var mongoURI = "mongodb://heroku_l323p20s:ct8shctmji30mbkc7j5heqko62@ds137139.mlab.com:37139/heroku_l323p20s";
 var MongoDB = mongoose.connect(mongoURI).connection;
 
 MongoDB.on('error', function (err) {
