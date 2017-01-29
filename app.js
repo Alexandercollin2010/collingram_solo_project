@@ -15,6 +15,9 @@ var users = require('./routes/users');
 var updateUser = require('./routes/updateUser');
 
 var app = express();
+// conect to mongodb
+var mongoURI = "mongodb://heroku_l323p20s:ct8shctmji30mbkc7j5heqko62@ds137139.mlab.com:37139/heroku_l323p20s";
+mongoose.connect(mongoURI);
 
 // middleware
 app.use(bodyParser.json());
@@ -49,17 +52,4 @@ app.set('port', serverPort);
 
 var server = app.listen(serverPort, function() {
   console.log('up and listening on', server.address().port);
-});
-
-// connect to the mongodb
-var mongoURI = "mongodb://heroku_l323p20s:ct8shctmji30mbkc7j5heqko62@ds137139.mlab.com:37139/heroku_l323p20s";
-mongoose.connect(mongoURI);
-var MongoDB = mongoose.connect(mongoURI).connection;
-
-MongoDB.on('error', function (err) {
-    console.log('mongodb connection error:', err);
-});
-
-MongoDB.once('open', function () {
-  console.log('mongodb connection open!');
 });
