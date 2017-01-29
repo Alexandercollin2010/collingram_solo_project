@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var logger = require('morgan');
 var passport = require('./strategies/userStrategy');
+var MongoStore = require('connect-mongo')(express);
 
 //require routers
 var indexRouter = require('./routes/index');
@@ -23,12 +24,18 @@ mongoose.connect('mongodb://heroku_l323p20s:ct8shctmji30mbkc7j5heqko62@ds137139.
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-app.use(session({
-   secret: 'secret',
-   key: 'user',
-   resave: 'true',
-   saveUninitialized: false,
-   cookie: { maxage: 60000, secure: false }
+// app.use(session({
+//    secret: 'secret',
+//    key: 'user',
+//    resave: 'true',
+//    saveUninitialized: false,
+//    cookie: { maxage: 60000, secure: false }
+// }));
+
+app.use(express.session({
+    secret:'secret',
+    maxAge: new Date(Date.now() + 3600000),
+    store: new MongoStore({mongoose_connection:mongoose.connection})
 }));
 
 // Passport
@@ -49,7 +56,7 @@ app.use('/update', updateUser);
 // server port set and listen
 // var serverPort = process.env.port || 3004;
 // app.set('port', serverPort);
-app.listen(process.env.Port || 5000)
+app.listen(process.env.Port || 5000);
 
 // var server = app.listen(serverPort, function() {
 //   console.log('up and listening on', server.address().port);
