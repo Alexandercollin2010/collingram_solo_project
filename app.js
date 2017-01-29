@@ -35,7 +35,7 @@ app.use(express.static('public'));
 app.use(express.session({
     secret:'secret',
     maxAge: new Date(Date.now() + 3600000),
-    store: new MongoStore({mongoose_connection:mongoose.connection})
+    store: new MongoStore({mongooseConnection:mongoose.connection})
 }));
 
 // Passport
@@ -56,7 +56,7 @@ app.use('/update', updateUser);
 // server port set and listen
 // var serverPort = process.env.port || 3004;
 // app.set('port', serverPort);
-app.listen(process.env.Port || 5000);
+app.listen(process.env.Port);
 
 // var server = app.listen(serverPort, function() {
 //   console.log('up and listening on', server.address().port);
