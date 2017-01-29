@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var logger = require('morgan');
 var passport = require('./strategies/userStrategy');
-var MongoStore = require('connect-mongo')(express);
+var MongoStore = require('connect-mongo')(session);
 
 //require routers
 var indexRouter = require('./routes/index');
@@ -32,7 +32,7 @@ app.use(express.static('public'));
 //    cookie: { maxage: 60000, secure: false }
 // }));
 
-app.use(express.session({
+app.use(session({
     secret:'secret',
     maxAge: new Date(Date.now() + 3600000),
     store: new MongoStore({mongooseConnection:mongoose.connection})
@@ -56,7 +56,7 @@ app.use('/update', updateUser);
 // server port set and listen
 // var serverPort = process.env.port || 3004;
 // app.set('port', serverPort);
-app.listen(process.env.Port);
+app.listen(process.env.PORT);
 
 // var server = app.listen(serverPort, function() {
 //   console.log('up and listening on', server.address().port);
