@@ -47,9 +47,10 @@ app.use('/users', users);
 app.use('/update', updateUser);
 
 // server port set and listen
-var serverPort = process.env.port || 3004;
-app.set('port', serverPort);
+// var serverPort = process.env.port || 3004;
+// app.set('port', serverPort);
+app.listen(process.env.Port || 5000)
 
-var server = app.listen(serverPort, function() {
-  console.log('up and listening on', server.address().port);
-});
+// var server = app.listen(serverPort, function() {
+//   console.log('up and listening on', server.address().port);
+// });
