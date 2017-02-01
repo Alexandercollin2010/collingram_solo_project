@@ -17,9 +17,11 @@ var updateUser = require('./routes/updateUser');
 
 var app = express();
 // conect to mongodb
-//var mongoURI = "mongodb://heroku_l323p20s:ct8shctmji30mbkc7j5heqko62@ds137139.mlab.com:37139/heroku_l323p20s";
+
 
 var connectionString = process.env.MONGODB_URI;
+
+
 
 mongoose.connect(connectionString);
 
