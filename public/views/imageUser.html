@@ -36,7 +36,7 @@
           <p>{{image.name}}</p>
           <p>{{image.username}}</p>
         </div>
-        <img ng-src='{{image.file.path + "/" + image.file.originalname}}'class="img-circle" class="img-responsive" height= 150px width= auto  >
+        <img ng-src='{{image.file.location}}'class="img-circle" class="img-responsive" height= 150px width= auto  >
       </br>
     </div>
     <button class= 'btn-danger' type="button" name="button" ng-click='deleteImage($index);' >Delete</button>
