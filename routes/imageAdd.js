@@ -13,7 +13,7 @@ var s3 = new aws.S3();
 var upload = multer({
   storage: multerS3({
     s3: s3,
-    bucket: process.env.S3_BUCKET_NAME,//alternately, if you are not using a .env file you can just use a string for the name of your bucket here, 'your-bucket-name'
+    bucket: 'collinsgram',//alternately, if you are not using a .env file you can just use a string for the name of your bucket here, 'your-bucket-name'
     acl: 'public-read',//default is private, set to public-read is so the public can view your pictures
     metadata: function (req, file, cb) {
       cb(null, {fieldName: file.fieldname});

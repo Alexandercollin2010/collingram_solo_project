@@ -19,7 +19,7 @@ var app = express();
 // conect to mongodb
 //var mongoURI = "mongodb://heroku_l323p20s:ct8shctmji30mbkc7j5heqko62@ds137139.mlab.com:37139/heroku_l323p20s";
 
-var connectionString = process.env.MONGODB_URI;
+var connectionString = 'mongodb://localhost:27017/collingarm';
 
 
 
@@ -37,13 +37,6 @@ mongoose.connection.on('error', function (err) {
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-// app.use(session({
-//    secret: 'secret',
-//    key: 'user',
-//    resave: 'true',
-//    saveUninitialized: false,
-//    cookie: { maxage: 60000, secure: false }
-// }));
 
 app.use(session({
     secret:'secret',
@@ -69,7 +62,10 @@ app.use('/update', updateUser);
 // server port set and listen
 // var serverPort = process.env.port || 3004;
 // app.set('port', serverPort);
-app.listen(process.env.PORT);
+app.set('port', process.env.PORT || 5000);
+app.listen(app.get('port'), function() {
+    console.log('Listening on port: ', app.get('port'));
+});
 
 // var server = app.listen(serverPort, function() {
 //   console.log('up and listening on', server.address().port);
