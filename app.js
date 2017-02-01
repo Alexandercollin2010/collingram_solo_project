@@ -19,7 +19,7 @@ var app = express();
 // conect to mongodb
 //var mongoURI = "mongodb://heroku_l323p20s:ct8shctmji30mbkc7j5heqko62@ds137139.mlab.com:37139/heroku_l323p20s";
 
-var connectionString = 'mongodb://localhost:27017/collingarm';
+var connectionString = 'mongodb://heroku_72kc77ll:4gjh55mu5ns2fvq6arkm66b307@ds139899.mlab.com:39899/heroku_72kc77ll';
 
 
 
@@ -40,7 +40,7 @@ app.use(express.static('public'));
 
 app.use(session({
     secret:'secret',
-    maxAge: new Date(Date.now() + 3600000),
+    maxAge: new Date(Date.now() + 36000),
     store: new MongoStore({mongooseConnection:mongoose.connection})
 }));
 
