@@ -40,7 +40,7 @@ app.use(express.static('public'));
 
 app.use(session({
     secret:'secret',
-    maxAge: new Date(Date.now() + 36000),
+    maxAge: new Date(Date.now() + 3600),
     store: new MongoStore({mongooseConnection:mongoose.connection})
 }));
 
